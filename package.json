@@ -1,0 +1,25 @@
+{
+  "name": "webmenu",
+  "version": "1.0.0",
+  "description": "In deze map:\r index.html : frameindeling van standaard SPIN site\r indexleft.html : menu dat in het linkerframe komt\r tabel.html : typische html pagina die in het rechterframe komt",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-less": "^3.5.0"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badabingbreda/webmenu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/badabingbreda/webmenu/issues"
+  },
+  "homepage": "https://github.com/badabingbreda/webmenu#readme"
+}
