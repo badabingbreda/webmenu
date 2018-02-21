@@ -19,7 +19,7 @@ var
             ''].join('\n');
 
 gulp.task('less', function () {
- return gulp.src('./less/**/*.less')
+ return gulp.src('./dev/less/**/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
@@ -29,7 +29,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('js', function() {
-  return gulp.src('./dev/*.js')
+  return gulp.src('./dev/js/*.js')
     .pipe(plumber())
     .pipe(header(banner, { pkg : pkg } ))
     .pipe(uglify({preserveComments: 'some'}))
@@ -43,8 +43,8 @@ gulp.task('watch', function() {
 	//gulp.watch(['*.js', '*.less'], ['js', 'less']);
 
 	// gulp v4
-	gulp.watch('./dev/**/*.js', gulp.parallel('js'));
-	gulp.watch('./less/**/*.less', gulp.parallel('less'));
+	gulp.watch('./dev/js/**/*.js', gulp.parallel('js'));
+	gulp.watch('./dev/less/**/*.less', gulp.parallel('less'));
 });
 
 gulp.task( 'default', gulp.series( gulp.parallel( 'js', 'less' ), 'watch' ) );

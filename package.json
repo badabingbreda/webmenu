@@ -1,6 +1,6 @@
 {
   "name": "webmenu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "copyright": "Copyright 2018",
   "homepage": "http://www.badabing.nl",
   "description": "In deze map:\r index.html : frameindeling van standaard SPIN site\r indexleft.html : menu dat in het linkerframe komt\r tabel.html : typische html pagina die in het rechterframe komt",
