@@ -309,6 +309,9 @@ table.tabledocs {
   padding: 5px;
   margin: 5px;
 }
+.tabledocs tbody tr:hover {
+  background-color: #ffa;
+}
 @media only screen and (max-width: 1024px) {
   .tabledocs {
     /* Force table to not be like tables anymore */
@@ -353,6 +356,12 @@ table.tabledocs {
   .tabledocs tfoot {
     display: none;
   }
+}
+.footer {
+  margin-top: 100px;
+  padding: 10px 60px 10px 20px;
+  background-color: #000;
+  color: white;
 }
 /* SOME DEMO STYLES - NOT REQUIRED */
 body,

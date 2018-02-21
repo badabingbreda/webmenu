@@ -40,6 +40,7 @@
 @tabledocs-header-weight: 700;
 @tabledocs-header-background-color: #000;
 @tabledocs-header-color: #fff;
+@tabledocs-highlight-background-color: #ffa;
 
 
 body {
@@ -386,6 +387,11 @@ html {
 
 	}
 
+  tbody tr:hover {
+    background-color: @tabledocs-highlight-background-color;
+  }
+
+
 	@media only screen and (max-width: 1024px)  {
 
 		body {
@@ -430,6 +436,14 @@ html {
 
 	}
 
+}
+
+.footer {
+  margin-top: 100px;
+  padding: 10px 60px 10px 20px;
+
+  background-color: #000;
+  color: white;
 }
 
 
