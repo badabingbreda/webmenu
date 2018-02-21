@@ -9,4 +9,4 @@ Het doel:
 3. het geheel bootstrap gebaseerd en responsive (3 of 4?)
 4. Styling dmv css pagina's naar keuze (in root van subdomain of eventueel in (project)subdirectory)
 
- 
+ https://codepen.io/j_holtslander/pen/XmpMEp
