@@ -9,6 +9,7 @@ var
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     minify = require('gulp-minify-css'),
+    livereload =  require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     replace = require('gulp-replace'),
     banner = ['/*!',
@@ -18,23 +19,30 @@ var
             ' */',
             ''].join('\n');
 
+var
+    STYLES_PATHS = [ './dev/less/**/*.less' ],
+    SCRIPT_PATHS = [ './dev/js/**/*.js' ];
+
+
 gulp.task('less', function () {
- return gulp.src('./dev/less/**/*.less')
+ return gulp.src(STYLES_PATHS)
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(plumber())
     .pipe(header(banner, { pkg : pkg } ))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./css'))
+    .pipe(livereload());
 });
 
 gulp.task('js', function() {
-  return gulp.src('./dev/js/*.js')
+  return gulp.src(SCRIPT_PATHS)
     .pipe(plumber())
     .pipe(header(banner, { pkg : pkg } ))
     .pipe(uglify({preserveComments: 'some'}))
 	.pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('js'));
+    .pipe(gulp.dest('js'))
+    .pipe(livereload());
 });
 
 gulp.task('watch', function() {
@@ -43,8 +51,11 @@ gulp.task('watch', function() {
 	//gulp.watch(['*.js', '*.less'], ['js', 'less']);
 
 	// gulp v4
-	gulp.watch('./dev/js/**/*.js', gulp.parallel('js'));
-	gulp.watch('./dev/less/**/*.less', gulp.parallel('less'));
+    require( './server.js' );
+    livereload.listen();
+	gulp.watch(SCRIPT_PATHS, gulp.parallel('js'));
+	gulp.watch(STYLES_PATHS, gulp.parallel('less'));
+
 });
 
 gulp.task( 'default', gulp.series( gulp.parallel( 'js', 'less' ), 'watch' ) );

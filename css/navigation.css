@@ -372,16 +372,16 @@ body h1,
 body h2,
 body h3,
 body h4 {
-  color: rgba(204, 204, 204, 0.9);
+  color: rgba(88, 62, 126, 0.9);
 }
 body p,
 body blockquote {
   color: rgba(204, 204, 204, 0.7);
 }
-body a {
-  color: rgba(204, 204, 204, 0.8);
+body .breadcrumb a {
+  color: rgba(88, 62, 126, 0.8);
   text-decoration: underline;
 }
-body a:hover {
+body .breadcrumb a:hover {
   color: #ccc;
 }
