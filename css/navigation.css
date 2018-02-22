@@ -1,5 +1,5 @@
 /*!
- * Webmenu v1.1.1
+ * Webmenu v1.1.2
  * (c) 2018 Didou Schol
  * licensed under MIT
  */
