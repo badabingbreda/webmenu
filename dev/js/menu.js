@@ -7,7 +7,7 @@ $(document).ready( function() {
 			link: "//www.connectingprojects.com",
 			target: "_blank",
 			class: "sidebar-brand",
-			text: "MENU",
+			text: "Connecting",
 			icon: ""
 		},
 		{
@@ -98,9 +98,14 @@ $(document).ready( function() {
 			class: "",
 			text: "Tekeningen",
 			icon: "fa fa-fw fa-pencil-alt"
+		},
+		{
+			link: "/0000/contact",
+			target: "_self",
+			class: "",
+			text: "Contact Support",
+			icon: "fa fa-fw fa-envelope"
 		}
-
-
 
 	];
 
@@ -112,24 +117,41 @@ $(document).ready( function() {
 
 	process_menu( menu );
 
+	/**
+	 * Process the menu items on top level
+	 * @param  object menu
+	 * @return void
+	 */
 	function process_menu( menu ) {
 
+		// if menu isn't an object return early
 		if ( 'object' !== typeof( menu ) ) return;
 
+		// process all items in the menu
 		for ($i=0;$i<menu.length;$i++) {
 			process_item( menu[$i] );
 		}
+
+		// append the menutext to the menu targetarea
 		$( menu_target ).append( menutext );
 
 	}
 
-
-
+	/**
+	 * Process one item, recursively
+	 * @param  object item
+	 * @return void
+	 */
 	function process_item( item ) {
 
+		//if item isn't an object retrun early
 		if ( 'object' !== typeof( item ) ) return;
 
+		// concat the menutext since we will need to add text along the way, no autoclosing of elements
 		menutext = menutext.concat( '<li class="'+item.class+'"><a href="'+item.link+'" target="'+item.target+'"><i class="'+item.icon+'"></i>'+item.text+'</a>' );
+
+		// check if this menuitem has sub-items,
+		// if so pass the item on to this function recursively
 		if (item.sub && item.sub.length>0) {
 			menutext = menutext.concat('<ul>');
 			for ($j=0;$j<item.sub.length;$j++) {

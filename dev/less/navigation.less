@@ -27,7 +27,7 @@
 @hamburger-color-open: @text-color;
 
 // WIDTH VARIABLES
-@width1: 220px;
+@width1: 250px;
 @width2: 100px;
 @full-width: 100%;
 
@@ -42,6 +42,9 @@
 @tabledocs-header-color: #fff;
 @tabledocs-highlight-background-color: #ffa;
 
+.transition (@t: width, @s: .2s, @e: ease-in) {
+  transition: @t @s @e;
+}
 
 body {
     position: relative;
@@ -81,12 +84,12 @@ html {
   transition: all 0.5s ease;
 }
 #wrapper.toggled {
-  padding-left: 220px;
+  padding-left: @width1;
   #sidebar-wrapper {
     width: @width1;
   }
   #page-content-wrapper {
-    margin-right: -220px;
+    margin-right: -@width1;
     position: absolute;
   }
 }
@@ -96,11 +99,11 @@ html {
   -webkit-transition: all 0.5s ease;
   background: #1a1a1a;
   height: @full-height;
-  left: 220px;
-  margin-left: -220px;
+  left: @width1;
+  margin-left: -@width1;
   overflow-x: hidden;
   overflow-y: auto;
-  transition: all 0.5s ease;
+  .transition(all, 0.5s, ease);
   width: 0;
   z-index: 1000;
   &::-webkit-scrollbar {
@@ -136,7 +139,7 @@ html {
       left: 0;
       position: absolute;
       top: 0;
-      transition: width .2s ease-in;
+      .transition(width, 0.2s, ease-in);
       width: 3px;
       z-index: -1;
     }
@@ -188,7 +191,7 @@ html {
     }
     &:hover {
       &:before {
-        transition: width .2s ease-in;
+        .transition(width, 0.2s, ease-out);
         width: @full-width;
       }
     }
@@ -202,7 +205,7 @@ html {
   li.open {
     &:hover {
       before {
-        transition: width .2s ease-in;
+        .transition(width, 0.2s, ease-out);
         width: @full-width;
       }
     }
@@ -363,6 +366,23 @@ html {
     background-color: rgba(0,0,0,.4);
     z-index: 1;
 }
+
+/*-------------------------------*/
+/*          Page Content         */
+/*-------------------------------*/
+.page-header {
+  text-transform: capitalize;
+}
+
+thead, tfoot{
+  th {
+    text-transform: lowercase;
+  }
+}
+
+/*-------------------------------*/
+/*          Tabledocs            */
+/*-------------------------------*/
 
 .tabledocs {
 	table& {

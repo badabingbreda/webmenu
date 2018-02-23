@@ -37,13 +37,13 @@ html {
   transition: all 0.5s ease;
 }
 #wrapper.toggled {
-  padding-left: 220px;
+  padding-left: 250px;
 }
 #wrapper.toggled #sidebar-wrapper {
-  width: 220px;
+  width: 250px;
 }
 #wrapper.toggled #page-content-wrapper {
-  margin-right: -220px;
+  margin-right: -250px;
   position: absolute;
 }
 #sidebar-wrapper {
@@ -52,8 +52,8 @@ html {
   -webkit-transition: all 0.5s ease;
   background: #1a1a1a;
   height: 100%;
-  left: 220px;
-  margin-left: -220px;
+  left: 250px;
+  margin-left: -250px;
   overflow-x: hidden;
   overflow-y: auto;
   transition: all 0.5s ease;
@@ -76,7 +76,7 @@ html {
   padding: 0;
   position: absolute;
   top: 0;
-  width: 220px;
+  width: 250px;
 }
 .sidebar-nav li {
   display: inline-block;
@@ -124,7 +124,7 @@ html {
   background-color: #987dbf;
 }
 .sidebar-nav li:hover:before {
-  transition: width 0.2s ease-in;
+  transition: width 0.2s ease-out;
   width: 100%;
 }
 .sidebar-nav li a {
@@ -134,7 +134,7 @@ html {
   text-decoration: none;
 }
 .sidebar-nav li.open:hover before {
-  transition: width 0.2s ease-in;
+  transition: width 0.2s ease-out;
   width: 100%;
 }
 .sidebar-nav .dropdown-menu {
@@ -288,6 +288,19 @@ html {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
+/*-------------------------------*/
+/*          Page Content         */
+/*-------------------------------*/
+.page-header {
+  text-transform: capitalize;
+}
+thead th,
+tfoot th {
+  text-transform: lowercase;
+}
+/*-------------------------------*/
+/*          Tabledocs            */
+/*-------------------------------*/
 table.tabledocs {
   width: 100%;
 }
